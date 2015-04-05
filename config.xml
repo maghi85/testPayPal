@@ -10,7 +10,6 @@
     <content src="index.html" />
     <access origin="*" />
     <plugins>
-    <plugins>
         <plugin name="App" value="org.apache.cordova.App"/>
         <plugin name="Geolocation" value="org.apache.cordova.GeoBroker"/>
         <plugin name="Device" value="org.apache.cordova.Device"/>
