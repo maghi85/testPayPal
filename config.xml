@@ -9,4 +9,7 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
+
+    <!-- plugins go here -->
+    <gap:plugin name="com.paypal.cordova.mobilesdk" source="plugins.cordova.io" />
 </widget>
