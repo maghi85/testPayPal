@@ -4,5 +4,11 @@
             "type": "registry",
             "id": "org.apache.cordova.console"
         }
+    },
+    "com.paypal.cordova.mobilesdk": {
+        "source": {
+            "type": "registry",
+            "id": "com.paypal.cordova.mobilesdk"
+        }
     }
 }
