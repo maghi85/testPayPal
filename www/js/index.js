@@ -16,6 +16,14 @@
 * specific language governing permissions and limitations
 * under the License.
 */
+function showAlert(alertMsg, title) {
+    if (title == undefined)
+        title = "Tecom Directory";
+    navigator.notification.alert(
+        alertMsg, dismissAlert, title, "Done"
+    );
+}
+
 var app = {
    // Application Constructor
    initialize: function() {
@@ -34,6 +42,7 @@ var app = {
    // function, we must explicity call 'app.receivedEvent(...);'
    onDeviceReady: function() {
        app.receivedEvent('deviceready');
+       showAlert('device is ready','');
    },
    // Update DOM on a Received Event
    receivedEvent: function(id) {
@@ -58,10 +67,10 @@ var app = {
 
    },
    onSuccesfulPayment : function(payment) {
-     alert("payment success: " + JSON.stringify(payment, null, 4));
+     showAlert("payment success: " + JSON.stringify(payment, null, 4));
    },
    onAuthorizationCallback : function(authorization) {
-     alert("authorization: " + JSON.stringify(authorization, null, 4));
+     showAlert("authorization: " + JSON.stringify(authorization, null, 4));
    },
    createPayment : function () {
      // for simplicity use predefined amount
@@ -86,19 +95,19 @@ var app = {
 
      buyNowBtn.onclick = function(e) {
        // single payment
-       alert("clicked on buy now");
+       showAlert("clicked on buy now");
        PayPalMobile.renderSinglePaymentUI(app.createPayment(), app.onSuccesfulPayment, app.onUserCanceled);
      };
 
      buyInFutureBtn.onclick = function(e) {
        // future payment
-       alert("clicked on buy future");
+       showAlert("clicked on buy future");
        PayPalMobile.renderFuturePaymentUI(app.onAuthorizationCallback, app.onUserCanceled);
      };
 
      profileSharingBtn.onclick = function(e) {
        // profile sharing
-       alert("clicked on sharing");
+       showAlert("clicked on sharing");
        PayPalMobile.renderProfileSharingUI(["profile", "email", "phone", "address", "futurepayments", "paypalattributes"], app.onAuthorizationCallback, app.onUserCanceled);
      };
    },
@@ -108,7 +117,7 @@ var app = {
      PayPalMobile.prepareToRender("PayPalEnvironmentSandbox", app.configuration(), app.onPrepareRender);
    },
    onUserCanceled : function(result) {
-     alert(result);
+     showAlert(result);
    }
 };
 
