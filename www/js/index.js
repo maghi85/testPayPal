@@ -51,17 +51,17 @@ var app = {
    },
    initPaymentUI : function () {
      var clientIDs = {
-       "PayPalEnvironmentProduction": "YOUR_PRODUCTION_CLIENT_ID",
-       "PayPalEnvironmentSandbox": "YOUR_SANDBOX_CLIENT_ID"
+       //"PayPalEnvironmentProduction": "YOUR_PRODUCTION_CLIENT_ID",
+       "PayPalEnvironmentSandbox": "AWXAU6ZEbiiDNzc-MbfZItOiCXZqX0EP40BdlQjWuqYsJCLfPvjvmmkW9eznJb3ikC_Ye_lSJno68RJT"
      };
      PayPalMobile.init(clientIDs, app.onPayPalMobileInit);
 
    },
    onSuccesfulPayment : function(payment) {
-     console.log("payment success: " + JSON.stringify(payment, null, 4));
+     alert("payment success: " + JSON.stringify(payment, null, 4));
    },
    onAuthorizationCallback : function(authorization) {
-     console.log("authorization: " + JSON.stringify(authorization, null, 4));
+     alert("authorization: " + JSON.stringify(authorization, null, 4));
    },
    createPayment : function () {
      // for simplicity use predefined amount
@@ -105,7 +105,7 @@ var app = {
      PayPalMobile.prepareToRender("PayPalEnvironmentSandbox", app.configuration(), app.onPrepareRender);
    },
    onUserCanceled : function(result) {
-     console.log(result);
+     alert(result);
    }
 };
 

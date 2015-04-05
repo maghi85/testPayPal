@@ -26,6 +26,14 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <title>Hello World</title>
+        <style>
+            .myButton{
+                 display:block;
+                 float:left;
+                 clear:both;
+                 height:75px;
+            }
+        </style>
     </head>
     <body>
         <div class="app">
@@ -33,9 +41,9 @@
             <div id="deviceready" class="blink">
                 <p class="event listening">Connecting to Device</p>
                 <p class="event received">Device is Ready</p>
-                <button id="buyNowBtn"> Buy Now !</button>
-                <button id="buyInFutureBtn"> Pay in Future !</button>
-                <button id="profileSharingBtn"> Profile Sharing !</button>
+                <button id="buyNowBtn" class="myButton"> Buy Now !</button>
+                <button id="buyInFutureBtn" class="myButton"> Pay in Future !</button>
+                <button id="profileSharingBtn" class="myButton"> Profile Sharing !</button>
             </div>
         </div>
         <script type="text/javascript" src="cordova.js"></script>
