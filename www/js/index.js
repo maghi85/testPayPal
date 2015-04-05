@@ -86,16 +86,19 @@ var app = {
 
      buyNowBtn.onclick = function(e) {
        // single payment
+       alert("clicked on buy now");
        PayPalMobile.renderSinglePaymentUI(app.createPayment(), app.onSuccesfulPayment, app.onUserCanceled);
      };
 
      buyInFutureBtn.onclick = function(e) {
        // future payment
+       alert("clicked on buy future");
        PayPalMobile.renderFuturePaymentUI(app.onAuthorizationCallback, app.onUserCanceled);
      };
 
      profileSharingBtn.onclick = function(e) {
        // profile sharing
+       alert("clicked on sharing");
        PayPalMobile.renderProfileSharingUI(["profile", "email", "phone", "address", "futurepayments", "paypalattributes"], app.onAuthorizationCallback, app.onUserCanceled);
      };
    },
